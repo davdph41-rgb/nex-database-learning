@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NEX Database Lab</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">NEX<span>.</span></div>
+    <div class="nav-label">DATABASE LAB</div>
+
+    <div class="status">
+      <span class="status-dot"></span>
+      PostgreSQL
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">DATABASE MANAGEMENT</p>
+
+        <h1>Product <span>Dashboard.</span></h1>
+
+        <p class="subtitle">
+          Kelola data produk menggunakan Neon PostgreSQL.
+        </p>
+      </div>
+
+      <div class="hero-icon">N</div>
+    </section>
+
+    <section class="stats">
+
+      <div class="stat-card">
+        <p>Total Produk</p>
+        <h2 id="totalProducts">0</h2>
+      </div>
+
+      <div class="stat-card">
+        <p>Total Stok</p>
+        <h2 id="totalStock">0</h2>
+      </div>
+
+      <div class="stat-card">
+        <p>Total Nilai Stok</p>
+        <h2 id="totalValue">Rp0</h2>
+      </div>
+
+    </section>
+
+    <section class="panel">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PRODUCT MANAGEMENT</p>
+          <h2>Tambah Produk</h2>
+        </div>
+      </div>
+
+      <form id="productForm">
+
+        <input
+          type="text"
+          id="productName"
+          placeholder="Nama produk"
+          maxlength="100"
+          required
+        >
+
+        <input
+          type="number"
+          id="productPrice"
+          placeholder="Harga"
+          min="0"
+          step="1"
+          required
+        >
+
+        <input
+          type="number"
+          id="productStock"
+          placeholder="Stok"
+          min="0"
+          step="1"
+          required
+        >
+
+        <button type="submit">
+          + Tambah Produk
+        </button>
+
+      </form>
+
+    </section>
+
+    <section class="panel">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">DATABASE RECORDS</p>
+          <h2>Daftar Produk</h2>
+        </div>
+
+        <button class="refresh" id="refreshBtn">
+          ↻ Refresh
+        </button>
+      </div>
+
+      <input
+        type="search"
+        id="searchInput"
+        class="search"
+        placeholder="Cari nama produk..."
+      >
+
+      <div class="table-wrap">
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nama Produk</th>
+              <th>Harga</th>
+              <th>Stok</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+
+          <tbody id="productTable">
+            <tr>
+              <td colspan="5" class="empty">
+                Memuat data...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <p id="message" class="message"></p>
+
+    </section>
+
+    <footer>
+      NEX DATABASE LAB
+      <span>•</span>
+      POWERED BY NEON POSTGRESQL
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
